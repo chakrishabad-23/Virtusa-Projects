@@ -64,7 +64,7 @@ class ExpenseManager:
         plt.pie(
             category,
             labels=category.index,
-            autopct='%1.1f%%'
+            
         )
 
         plt.title("Category Wise Expense Distribution")
