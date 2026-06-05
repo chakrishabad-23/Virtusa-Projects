@@ -19,7 +19,9 @@ class ExpenseManager:
 
         df['date'] = pd.to_datetime(df['date'])
 
-        monthly = df.groupby(df['date'].dt.to_period('M'))['amount'].sum()
+        df['month'] = df['date'].dt.month
+
+        monthly = df.groupby('month')['amount'].sum()
 
         print("\nMonthly Summary")
         print(monthly)
